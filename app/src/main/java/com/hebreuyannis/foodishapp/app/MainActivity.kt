@@ -1,7 +1,8 @@
-package com.hebreuyannis.foodishapp
+package com.hebreuyannis.foodishapp.app
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.hebreuyannis.foodishapp.R
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {

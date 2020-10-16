@@ -1,4 +1,4 @@
-package com.hebreuyannis.foodishapp.https.api
+package com.hebreuyannis.foodishapp.app.https.api
 
 import okhttp3.ResponseBody
 import retrofit2.Call

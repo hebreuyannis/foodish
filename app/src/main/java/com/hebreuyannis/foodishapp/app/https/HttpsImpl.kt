@@ -1,8 +1,8 @@
-package com.hebreuyannis.foodishapp.https
+package com.hebreuyannis.foodishapp.app.https
 
 import androidx.annotation.WorkerThread
-import com.hebreuyannis.foodishapp.https.api.HttpsService
-import com.hebreuyannis.foodishapp.https.model.ImageEndpoint
+import com.hebreuyannis.foodishapp.app.https.api.HttpsService
+import com.hebreuyannis.foodishapp.app.https.model.ImageEndpoint
 import timber.log.Timber
 import java.io.IOException
 

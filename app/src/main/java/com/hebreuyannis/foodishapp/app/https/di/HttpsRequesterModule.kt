@@ -1,4 +1,4 @@
-package com.hebreuyannis.foodishapp.https.di
+package com.hebreuyannis.foodishapp.app.https.di
 
 import dagger.Module
 

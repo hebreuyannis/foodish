@@ -1,4 +1,4 @@
-package com.hebreuyannis.foodishapp.https.model
+package com.hebreuyannis.foodishapp.app.https.model
 
 enum class ImageEndpoint(val value:String) {
     BIRYANI("biryani"),
