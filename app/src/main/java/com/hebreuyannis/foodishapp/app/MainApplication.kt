@@ -11,8 +11,17 @@ class MainApplication:  Application(), HasAndroidInjector {
     @Inject
     lateinit var androidInjector: DispatchingAndroidInjector<Any>
 
+    open lateinit var daggerAppComponent: AppComponent
+
     override fun onCreate() {
         super.onCreate()
+    }
+
+    protected open fun configureDependencyInjection() {
+        daggerAppComponent = Dagg
+            .application(this)
+            .build()
+        daggerAppComponent.inject(this)
     }
 
     override fun androidInjector(): AndroidInjector<Any> {
