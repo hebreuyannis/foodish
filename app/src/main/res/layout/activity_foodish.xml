@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".app.ui.FoodishActivity">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/foodish"
+        android:textColor="@color/black"
+        android:textStyle="bold|italic"
+        android:textSize="24sp"
+        android:layout_marginBottom="24dp"
+        app:layout_constraintStart_toStartOf="@id/card_view"
+        app:layout_constraintBottom_toTopOf="@id/card_view"/>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/card_view"
+        android:layout_width="350dp"
+        android:layout_height="250dp"
+        android:layout_gravity="center"
+        app:cardCornerRadius="4dp"
+        android:elevation="10dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+       <androidx.appcompat.widget.AppCompatImageView
+           android:id="@+id/displayImage"
+           android:layout_width="match_parent"
+           android:layout_height="match_parent"
+           android:padding="4dp"
+           app:srcCompat="@color/design_default_color_error"/>
+    </androidx.cardview.widget.CardView>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="8dp"
+        android:layout_marginTop="32dp"
+        app:layout_constraintTop_toBottomOf="@id/card_view"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <ImageButton
+            android:id="@+id/resfreshButton"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_weight="1"
+            android:elevation="5dp"
+            android:background="@drawable/refresh_shape"
+            android:src="@android:drawable/ic_popup_sync"
+            android:contentDescription="@string/refresh" />
+
+        <Space
+            android:layout_width="30dp"
+            android:layout_height="wrap_content"/>
+
+        <ImageButton
+            android:id="@+id/favButton"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_weight="1"
+            android:elevation="5dp"
+            android:background="@drawable/fav_shape"
+            android:src="@android:drawable/star_off"
+            android:contentDescription="@string/favorite" />
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

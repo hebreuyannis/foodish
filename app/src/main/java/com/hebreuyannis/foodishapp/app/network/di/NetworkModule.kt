@@ -6,6 +6,7 @@ import dagger.Module
 import dagger.Provides
 import okhttp3.OkHttpClient
 import retrofit2.Retrofit
+import retrofit2.converter.gson.GsonConverterFactory
 import javax.inject.Singleton
 
 
@@ -25,6 +26,7 @@ class NetworkModule {
     fun apiRetrofit(okHttpClient: OkHttpClient): Retrofit {
         return Retrofit.Builder()
             .baseUrl("https://foodish-api.herokuapp.com")
+            .addConverterFactory(GsonConverterFactory.create())
             .client(okHttpClient)
             .build()
     }

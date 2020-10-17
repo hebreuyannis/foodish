@@ -62,6 +62,7 @@ dependencies {
 
     implementation "com.squareup.okhttp3:okhttp:$okHttp"
     implementation "com.squareup.retrofit2:retrofit:$retrofit"
+    implementation "com.squareup.retrofit2:converter-gson:2.1.0"
     implementation "com.jakewharton.retrofit:retrofit2-kotlin-coroutines-adapter:$retrofitCoroutinesAdapter"
 
     // ViewModel and LiveData
