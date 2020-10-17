@@ -7,6 +7,7 @@ import timber.log.Timber
 import java.io.IOException
 
 interface HttpsRequester {
+    @WorkerThread
     fun retrieveImages(endpoint: ImageEndpoint)
 }
 
@@ -22,3 +23,7 @@ class HttpsImpl(private val httpsService: HttpsService) : HttpsRequester {
         Timber.d("request body ${response.body()}")
     }
 }
+
+//TODO: faire page de selection aleatoire
+//TODO: faire page liked photo
+//TODO: faire gestion d'erreur exception + snackbar
