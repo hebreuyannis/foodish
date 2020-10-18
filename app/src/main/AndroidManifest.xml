@@ -12,8 +12,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.FoodishApp">
-        <activity android:name=".app.ui.FavoriteActivity"></activity>
-        <activity android:name=".app.ui.FoodishActivity">
+        <activity android:name=".app.TestActivity" />
+        <activity android:name=".app.favorite.FavoriteActivity" />
+        <activity android:name=".app.foodish.FoodishActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

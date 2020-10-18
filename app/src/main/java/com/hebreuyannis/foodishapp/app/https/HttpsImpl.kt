@@ -9,26 +9,22 @@ import java.io.IOException
 
 interface HttpsRequester {
     @WorkerThread
-    fun retrieveImages(endpoint: ImageEndpoint):FoodishImgage?
+    fun retrieveImages(endpoint: ImageEndpoint): FoodishImgage?
 }
 
 class HttpsImpl(private val httpsService: HttpsService) : HttpsRequester {
 
     @WorkerThread
-    override fun retrieveImages(endpoint: ImageEndpoint):FoodishImgage? {
+    override fun retrieveImages(endpoint: ImageEndpoint): FoodishImgage? {
         val call = httpsService.getFoodishImages(endpoint.value)
         val response = call.execute()
         if (!response.isSuccessful) {
             throw IOException("Status: ${response.code()} - ${response.errorBody()?.string()}")
         }
         val image = response.body()
-        if(image == null){
+        if (image == null) {
             Timber.d("No image was load")
         }
         return image
     }
 }
-
-//TODO: faire page de selection aleatoire
-//TODO: faire page liked photo
-//TODO: faire gestion d'erreur exception + snackbar

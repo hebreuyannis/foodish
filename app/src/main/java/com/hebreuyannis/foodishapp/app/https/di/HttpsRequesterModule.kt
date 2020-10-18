@@ -12,12 +12,12 @@ import dagger.Provides
 class HttpsRequesterModule {
 
     @Provides
-    fun httpsRequester(service: HttpsService):HttpsRequester {
+    fun httpsRequester(service: HttpsService): HttpsRequester {
         return HttpsImpl(service)
     }
 
     @Provides
-    fun httpsFoodDownload(service:HttpsRequester):FoodishDownloader {
+    fun httpsFoodDownload(service: HttpsRequester): FoodishDownloader {
         return FoodishDownloaderImpl(service)
     }
 

@@ -1,7 +1,5 @@
-package com.hebreuyannis.foodishapp.app.di
+package com.hebreuyannis.foodishapp.app.utils
 
-import com.hebreuyannis.foodishapp.app.utils.DefaultDispatcherProvider
-import com.hebreuyannis.foodishapp.app.utils.DispatcherProvider
 import dagger.Module
 import dagger.Provides
 import javax.inject.Singleton

@@ -2,7 +2,7 @@ package com.hebreuyannis.foodishapp.app.https.model
 
 import java.io.Serializable
 
-enum class ImageEndpoint(val value:String) {
+enum class ImageEndpoint(val value: String) {
     BIRYANI("biryani"),
     BURGER("burger"),
     DOSA("dosa"),
@@ -10,4 +10,4 @@ enum class ImageEndpoint(val value:String) {
     PIZZA("pizza")
 }
 
-data class FoodishImgage(val image:String): Serializable
+data class FoodishImgage(val image: String) : Serializable

@@ -1,14 +1,14 @@
-package com.hebreuyannis.foodishapp.app.ui
+package com.hebreuyannis.foodishapp.app.favorite
 
+import com.hebreuyannis.foodishapp.app.foodish.FoodishActivity
 import dagger.Subcomponent
 
-@FavoriteScope
-@Subcomponent
+@Subcomponent(modules = [])
 interface FavoriteComponent {
 
     @Subcomponent.Factory
     interface Factory {
-        fun create():FavoriteComponent
+        fun create(): FavoriteComponent
     }
 
     fun inject(activity: FavoriteActivity)

@@ -1,15 +1,19 @@
-package com.hebreuyannis.foodishapp.app.ui
+package com.hebreuyannis.foodishapp.app.foodish
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuInflater
+import android.view.MenuItem
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.content.ContextCompat
 import androidx.lifecycle.Observer
 import com.bumptech.glide.Glide
 import com.hebreuyannis.foodishapp.R
 import com.hebreuyannis.foodishapp.app.MainApplication
+import com.hebreuyannis.foodishapp.app.favorite.FavoriteActivity
+import com.hebreuyannis.foodishapp.app.foodish.FoodishViewModel.Command
 import com.hebreuyannis.foodishapp.app.https.HttpsRequester
-import com.hebreuyannis.foodishapp.app.ui.FoodishViewModel.Command
 import kotlinx.android.synthetic.main.activity_foodish.*
 import timber.log.Timber
 import javax.inject.Inject
@@ -33,6 +37,7 @@ class FoodishActivity : AppCompatActivity() {
         viewmodel.command.observe(this, Observer {
             processCommand(it)
         })
+        viewmodel.refreshFoodish()
     }
 
     private fun initView() {
@@ -49,15 +54,33 @@ class FoodishActivity : AppCompatActivity() {
     private fun processCommand(command: Command) {
         when (command) {
             is Command.LoadFoodish -> {
-                favButton.setImageDrawable(getDrawable(android.R.drawable.star_off))
+                favButton.setImageDrawable(
+                    ContextCompat.getDrawable(
+                        this,
+                        android.R.drawable.star_off
+                    )
+                )
                 Glide.with(this)
                     .load(command.url)
                     .into(displayImage)
             }
             is Command.FavoriteFoodish -> {
-                favButton.setImageDrawable(getDrawable(android.R.drawable.star_on))
+                favButton.setImageDrawable(
+                    ContextCompat.getDrawable(
+                        this,
+                        android.R.drawable.star_on
+                    )
+                )
             }
             Command.ErrorLoading -> Timber.d("error loading")
+            Command.DeleteFavoriteFoodish -> {
+                favButton.setImageDrawable(
+                    ContextCompat.getDrawable(
+                        this,
+                        android.R.drawable.star_off
+                    )
+                )
+            }
         }
     }
 
@@ -66,4 +89,13 @@ class FoodishActivity : AppCompatActivity() {
         inflater.inflate(R.menu.main_foodish_menu, menu)
         return true
     }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        when (item.itemId) {
+            R.id.fav -> startActivity(Intent(this, FavoriteActivity::class.java))
+        }
+        return super.onOptionsItemSelected(item)
+    }
 }
+
+//TODO: faire gestion d'erreur exception + snackbar
