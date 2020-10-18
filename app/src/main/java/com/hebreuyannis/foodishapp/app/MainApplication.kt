@@ -7,10 +7,10 @@ import com.hebreuyannis.foodishapp.app.di.DaggerAppComponent
 open class MainApplication : Application() {
 
     val appComponent: AppComponent by lazy {
-        initializeAppComonent()
+        initializeComponent()
     }
 
-    open fun initializeAppComonent(): AppComponent {
+    open fun initializeComponent(): AppComponent {
         return DaggerAppComponent.factory().create(applicationContext)
     }
 }

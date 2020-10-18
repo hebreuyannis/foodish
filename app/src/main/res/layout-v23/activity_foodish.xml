@@ -51,10 +51,10 @@
             android:layout_width="50dp"
             android:layout_height="50dp"
             android:layout_weight="1"
-            android:foreground="@drawable/ripple"
             android:background="@drawable/refresh_shape"
             android:contentDescription="@string/refresh"
             android:elevation="5dp"
+            android:foreground="@drawable/ripple"
             android:src="@android:drawable/ic_popup_sync" />
 
         <Space
@@ -66,10 +66,10 @@
             android:layout_width="50dp"
             android:layout_height="50dp"
             android:layout_weight="1"
-            android:foreground="@drawable/ripple"
             android:background="@drawable/fav_shape"
             android:contentDescription="@string/favorite"
             android:elevation="5dp"
+            android:foreground="@drawable/ripple"
             android:src="@android:drawable/star_off" />
 
     </LinearLayout>

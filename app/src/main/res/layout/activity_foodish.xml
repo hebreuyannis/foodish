@@ -51,10 +51,10 @@
             android:layout_width="50dp"
             android:layout_height="50dp"
             android:layout_weight="1"
-            android:foreground="?android:attr/selectableItemBackground"
             android:background="@drawable/refresh_shape"
             android:contentDescription="@string/refresh"
             android:elevation="5dp"
+            android:foreground="?android:attr/selectableItemBackground"
             android:src="@android:drawable/ic_popup_sync" />
 
         <Space
