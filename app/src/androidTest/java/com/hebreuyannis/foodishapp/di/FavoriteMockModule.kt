@@ -3,7 +3,7 @@ package com.hebreuyannis.foodishapp.di
 import com.hebreuyannis.foodishapp.app.favorite.FavoriteDecider
 import com.hebreuyannis.foodishapp.app.favorite.FavoriteFoodishRepository
 import com.hebreuyannis.foodishapp.app.favorite.ShouldRegisterDecider
-import com.hebreuyannis.foodishapp.app.utils.DispatcherProvider
+import com.hebreuyannis.foodishapp.app.coroutine.DispatcherProvider
 import com.hebreuyannis.foodishapp.model.FavoriteRepositoryMock
 import dagger.Module
 import dagger.Provides

@@ -4,7 +4,7 @@ import com.hebreuyannis.foodishapp.app.di.AppComponent
 import com.hebreuyannis.foodishapp.app.di.SubComponent
 import com.hebreuyannis.foodishapp.app.https.di.HttpsRequesterModule
 import com.hebreuyannis.foodishapp.app.network.di.NetworkModule
-import com.hebreuyannis.foodishapp.app.utils.CoroutinesModule
+import com.hebreuyannis.foodishapp.app.coroutine.CoroutinesModule
 import dagger.Component
 import javax.inject.Singleton
 

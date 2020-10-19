@@ -5,8 +5,8 @@ import androidx.lifecycle.viewModelScope
 import com.hebreuyannis.foodishapp.app.favorite.FavoriteFoodishRepository
 import com.hebreuyannis.foodishapp.app.favorite.ShouldRegisterDecider
 import com.hebreuyannis.foodishapp.app.https.FoodishDownloader
-import com.hebreuyannis.foodishapp.app.utils.DispatcherProvider
-import com.hebreuyannis.foodishapp.app.utils.SingleLiveEvent
+import com.hebreuyannis.foodishapp.app.coroutine.DispatcherProvider
+import com.hebreuyannis.foodishapp.app.SingleLiveEvent
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 import javax.inject.Inject
@@ -18,7 +18,8 @@ class FoodishViewModel @Inject constructor(
     private val favoriteDecider: ShouldRegisterDecider
 ) : ViewModel() {
 
-    val command: SingleLiveEvent<Command> = SingleLiveEvent()
+    val command: SingleLiveEvent<Command> =
+        SingleLiveEvent()
     var current = ""
 
     sealed class Command {
@@ -61,9 +62,10 @@ class FoodishViewModel @Inject constructor(
         }
     }
 
-    private suspend fun refresh() = withContext(dispatcherProvider.io()) {
+    private suspend fun refresh() = withContext(dispatcherProvider.io()){
         foodishDownloader.downloadFoodish()
     }
+
 
     private suspend fun shouldDisplayStar(target: String): Boolean {
         return !favoriteDecider.shouldRegister(target)

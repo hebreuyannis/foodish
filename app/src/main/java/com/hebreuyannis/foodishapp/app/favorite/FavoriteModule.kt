@@ -1,6 +1,6 @@
 package com.hebreuyannis.foodishapp.app.favorite
 
-import com.hebreuyannis.foodishapp.app.utils.DispatcherProvider
+import com.hebreuyannis.foodishapp.app.coroutine.DispatcherProvider
 import dagger.Module
 import dagger.Provides
 import javax.inject.Singleton

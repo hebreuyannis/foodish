@@ -1,4 +1,4 @@
-package com.hebreuyannis.foodishapp.app.utils
+package com.hebreuyannis.foodishapp.app
 
 import androidx.annotation.MainThread
 import androidx.lifecycle.LifecycleOwner

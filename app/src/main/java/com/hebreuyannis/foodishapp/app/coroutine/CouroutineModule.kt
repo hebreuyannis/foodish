@@ -1,4 +1,4 @@
-package com.hebreuyannis.foodishapp.app.utils
+package com.hebreuyannis.foodishapp.app.coroutine
 
 import dagger.Module
 import dagger.Provides

@@ -1,4 +1,4 @@
-package com.hebreuyannis.foodishapp.app.utils
+package com.hebreuyannis.foodishapp.app.coroutine
 
 import kotlinx.coroutines.CoroutineDispatcher
 import kotlinx.coroutines.Dispatchers
@@ -13,4 +13,5 @@ interface DispatcherProvider {
 
 }
 
-class DefaultDispatcherProvider : DispatcherProvider
+class DefaultDispatcherProvider :
+    DispatcherProvider

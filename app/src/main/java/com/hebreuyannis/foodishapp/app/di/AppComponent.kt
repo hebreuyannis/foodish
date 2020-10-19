@@ -7,7 +7,7 @@ import com.hebreuyannis.foodishapp.app.favorite.FavoriteFoodishRepository
 import com.hebreuyannis.foodishapp.app.favorite.FavoriteModule
 import com.hebreuyannis.foodishapp.app.https.di.HttpsRequesterModule
 import com.hebreuyannis.foodishapp.app.network.di.NetworkModule
-import com.hebreuyannis.foodishapp.app.utils.CoroutinesModule
+import com.hebreuyannis.foodishapp.app.coroutine.CoroutinesModule
 import dagger.BindsInstance
 import dagger.Component
 import javax.inject.Singleton
